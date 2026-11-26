@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fictional client portal used to demonstrate Playwright automated testing.">
+  <title>Northstar Portal — QA Practice App</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-icon">N</span><span>Northstar<span class="brand-light">Portal</span></span></a>
+    <span class="demo-tag">FICTIONAL QA DEMO · NO REAL ACCOUNTS</span>
+  </header>
+  <main class="shell">
+    <section id="login-view" class="login-card" aria-labelledby="login-heading">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1 id="login-heading">Sign in to your workspace</h1>
+      <p class="subtle">This is a local mock portal built to demonstrate automated browser testing. Never enter real credentials.</p>
+      <div class="sample-creds"><strong>Demo credentials</strong><span>Email: <code>demo@northstar.test</code></span><span>Password: <code>Demo123!</code></span></div>
+      <form id="login-form" novalidate>
+        <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" placeholder="you@company.com">
+        <label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter password">
+        <p id="login-error" class="error" role="alert" hidden></p>
+        <button class="primary" type="submit">Sign in</button>
+      </form>
+    </section>
+    <section id="dashboard-view" class="dashboard" aria-labelledby="dashboard-heading" hidden>
+      <div class="dashboard-header"><div><p class="eyebrow">DEMO WORKSPACE</p><h1 id="dashboard-heading">Welcome, <span id="welcome-name">Demo User</span></h1><p class="subtle">Track example tasks and account preferences.</p></div><button id="sign-out" class="ghost" type="button">Sign out</button></div>
+      <div class="panel-grid">
+        <section class="panel" aria-labelledby="tasks-heading">
+          <div class="panel-title"><h2 id="tasks-heading">Release checklist</h2><span id="task-count" class="count">0 tasks</span></div>
+          <form id="task-form" novalidate><label for="task-title">New task</label><div class="task-entry"><input id="task-title" placeholder="e.g. Verify checkout flow" maxlength="80"><button class="primary add-button" type="submit">Add task</button></div><p class="error" id="task-error" role="alert" hidden></p></form>
+          <div class="filter-row" role="group" aria-label="Filter tasks"><button class="filter active" data-filter="all" type="button" aria-pressed="true">All</button><button class="filter" data-filter="open" type="button" aria-pressed="false">Open</button><button class="filter" data-filter="done" type="button" aria-pressed="false">Completed</button></div>
+          <ul id="task-list" class="task-list" aria-label="Tasks"></ul><p id="empty-state" class="subtle empty">No tasks in this view.</p>
+        </section>
+        <section class="panel profile-panel" aria-labelledby="settings-heading"><h2 id="settings-heading">Profile settings</h2><p class="subtle">Change the name displayed in the dashboard.</p><form id="profile-form" novalidate><label for="display-name">Display name</label><input id="display-name" maxlength="50" value="Demo User"><p id="profile-error" class="error" role="alert" hidden></p><p id="profile-success" class="success" role="status" hidden></p><button type="submit" class="secondary">Save profile</button></form></section>
+      </div>
+    </section>
+  </main>
+  <footer>QA showcase only. Mock login and browser storage are not production authentication or secure data storage.</footer>
+</body>
+</html>
