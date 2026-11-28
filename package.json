@@ -14,5 +14,6 @@
   "devDependencies": {
     "@playwright/test": "latest",
     "vite": "latest"
-  }
+  },
+  "type": "module"
 }
